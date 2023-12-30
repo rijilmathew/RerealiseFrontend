@@ -40,7 +40,7 @@ const AddPerson = ({open,handleClose}) => {
         });
     
         // Post request to the backend to create a new CareHome
-        axios.post('http://127.0.0.1:8000/api/providerdashboard/persons/', personData, {
+        axios.post('providerdashboard/persons/', personData, {
             headers: {
               'Content-Type': 'multipart/form-data',
             },

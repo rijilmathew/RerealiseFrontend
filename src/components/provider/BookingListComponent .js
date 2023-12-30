@@ -33,7 +33,7 @@ const BookingListComponent = () => {
     const markNotificationsAsRead = async () => {
       try {
         // Fetch BookingNotifications for the current provider with read_status=false
-        await axios.put(`http://127.0.0.1:8000/api/providerdashboard/mark-notifications-as-read/${providerId}/`);
+        await axios.put(`providerdashboard/mark-notifications-as-read/${providerId}/`);
       } catch (error) {
         console.error('Error updating read status:', error);
       }
@@ -44,7 +44,7 @@ const BookingListComponent = () => {
 
 
   useEffect(() => {
-    const apiUrl = 'http://127.0.0.1:8000/api/providerdashboard/provider-bookings/';
+    const apiUrl = 'providerdashboard/provider-bookings/';
 
     axios
       .get(apiUrl, { params: { provider_id: providerId } })

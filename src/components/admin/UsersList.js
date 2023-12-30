@@ -11,7 +11,7 @@ const UserList = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/admindashboard/users-list/')
+    axios.get('admindashboard/users-list/')
       .then(response => {
         setUsers(response.data);
       })
@@ -64,7 +64,7 @@ const UserList = () => {
   };
 
   const handleUserBlockAction = (userId) => {
-    axios.put(`http://127.0.0.1:8000/api/admindashboard/user-block/${userId}/`)
+    axios.put(`admindashboard/user-block/${userId}/`)
       .then(response => {
         const updatedUsers = users.map(user => (
           user.id === userId ? { ...user, is_active: false } : user
@@ -77,7 +77,7 @@ const UserList = () => {
   };
 
   const handleUserUnblockAction = (userId) => {
-    axios.put(`http://127.0.0.1:8000/api/admindashboard/user-unblock/${userId}/`)
+    axios.put(`admindashboard/user-unblock/${userId}/`)
       .then(response => {
         const updatedUsers = users.map(user => (
           user.id === userId ? { ...user, is_active: true } : user

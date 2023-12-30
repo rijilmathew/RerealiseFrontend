@@ -35,6 +35,8 @@ import ProviderPersonSingleViewPage from "./pages/providerPages/ProviderPersonSi
 import ProviderBookingListPage from "./pages/providerPages/ProviderBookingListPage";
 import ProfessionalsReviewManagementPage from "./pages/adminPages/ProfessionalsReviewManagementPage";
 import CarehomeReviewManagementPage from "./pages/adminPages/CarehomeReviewManagementPage";
+import axios from "axios";
+axios.defaults.baseURL= 'http://127.0.0.1:8000/api/'
 // Create your MUI theme
 const theme = createTheme({
   // Define your theme configurations here

@@ -28,7 +28,7 @@ const UserBookings = () => {
   const todayDate = new Date().toISOString().split('T')[0];
 
   const fetchBookings = () => {
-    const apiUrl = 'http://127.0.0.1:8000/api/usersdashboard/user-bookings/';
+    const apiUrl = 'usersdashboard/user-bookings/';
 
     axios
       .get(apiUrl, { params: { user_id: providerId } })
@@ -67,7 +67,7 @@ const UserBookings = () => {
     console.log('bookingid:',bookingId)
     console.log('bookingid:',timeSlotId)
     // Define your API endpoint for cancelling a booking and updating the TimeSlot
-    const apiUrl = `http://127.0.0.1:8000/api/usersdashboard/userbookingdistroy/${bookingId}/`;
+    const apiUrl = `usersdashboard/userbookingdistroy/${bookingId}/`;
   
     // Send a DELETE request to cancel the booking
     axios.delete(apiUrl)
@@ -76,7 +76,7 @@ const UserBookings = () => {
         toast.success("Cancelled Successfully");
         fetchBookings();
         // After successful cancellation, update the TimeSlot's is_booked field
-        const timeSlotUpdateUrl = `http://127.0.0.1:8000/api/providerdashboard/updatetimeSlot/${timeSlotId}/`;
+        const timeSlotUpdateUrl = `providerdashboard/updatetimeSlot/${timeSlotId}/`;
         
         axios.patch(timeSlotUpdateUrl, { is_booked: false })
           .then(response => {

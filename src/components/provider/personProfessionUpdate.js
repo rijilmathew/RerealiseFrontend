@@ -57,7 +57,7 @@ const PersonProfessionUpdate = ({open,handleClose,personLists,onUpdateSuccess}) 
         e.preventDefault();
         
        // Post request to the backend to create a new CareHome
-        axios.put(`http://127.0.0.1:8000/api/providerdashboard/persons/${personLists.id}`, personData, {
+        axios.put(`providerdashboard/persons/${personLists.id}`, personData, {
             headers: {
               'Content-Type': 'multipart/form-data',
             },

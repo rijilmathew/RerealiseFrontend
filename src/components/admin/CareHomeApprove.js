@@ -9,7 +9,7 @@ export const CareHomeApprove = () => {
 
         const fetchData= async()=>{
             try{
-                const response=await axios.get('http://127.0.0.1:8000/api/admindashboard/carehomelist/');
+                const response=await axios.get('admindashboard/carehomelist/');
                 setCareHomes(response.data);
             } catch (error){
                 console.error('Error fetching data:', error);
@@ -22,7 +22,7 @@ export const CareHomeApprove = () => {
 
         const handleApprove = async (careHomeId)=>{
             try{
-                await axios.patch(`http://127.0.0.1:8000/api/admindashboard/carehomelist/${careHomeId}/`,{
+                await axios.patch(`admindashboard/carehomelist/${careHomeId}/`,{
                     is_active: true
 
                 }).then(response =>{

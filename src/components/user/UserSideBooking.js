@@ -33,7 +33,7 @@ const UserSideBooking = ({ professionalId, payment, open, handleClose }) => {
     try {
       if (selectedDate) {
         const response = await axios.get(
-          `http://127.0.0.1:8000/api/usersdashboard/time-slots/${professionalId.id}/${selectedDate}`
+          `usersdashboard/time-slots/${professionalId.id}/${selectedDate}`
         );
         setExistingTimeSlots(response.data);
       }
@@ -84,7 +84,7 @@ const UserSideBooking = ({ professionalId, payment, open, handleClose }) => {
       const bodyData = new FormData();
       bodyData.append("fee", payment);
       const response = await axios.post(
-        `http://127.0.0.1:8000/api/usersdashboard/start_payment/${user_id}/`,
+        `usersdashboard/start_payment/${user_id}/`,
         
         bodyData,
       );
@@ -135,7 +135,7 @@ const UserSideBooking = ({ professionalId, payment, open, handleClose }) => {
       bodyData.append("status", 'confirmed')
 
       console.log('bodydata',bodyData)
-      const firstResponse=await axios.post("http://127.0.0.1:8000/api/usersdashboard/handle_payment_success/", bodyData);
+      const firstResponse=await axios.post("usersdashboard/handle_payment_success/", bodyData);
       if (firstResponse.status === 201) { // Check if the first call was successful
         handleClose()
         Swal.fire({
@@ -154,7 +154,7 @@ const UserSideBooking = ({ professionalId, payment, open, handleClose }) => {
         console.log('notifydata', notifyData)
   
         // Make the second Axios call
-        const secondResponse = await axios.post("http://127.0.0.1:8000/api/providerdashboard/booking-notification/", notifyData);
+        const secondResponse = await axios.post("providerdashboard/booking-notification/", notifyData);
   
         if (secondResponse.status === 201) { // Check if the second call was successful
           console.log('created ')

@@ -16,7 +16,7 @@ import AccessibilityNewIcon from '@mui/icons-material/AccessibilityNew';
 import { useDispatch, useSelector } from "react-redux";
 import MailIcon from '@mui/icons-material/Mail';
 import ChatIcon from '@mui/icons-material/Chat';
-import AccountBoxIcon from '@mui/icons-material/AccountBox';
+
 
 import { clearUSer } from '../../slices/userSlice';
 import AdminDrawer from './AdminDrawer';
@@ -53,7 +53,7 @@ const AdminHeader = () => {
       const fetchBookingNotifications = async () => {
         try {
           if(user && user.userId){
-            const response = await axios.get(`http://127.0.0.1:8000/api/providerdashboard/booking-notifications/${user.userId}/`);
+            const response = await axios.get(`providerdashboard/booking-notifications/${user.userId}/`);
             setBookingNotifications(response.data);
           }
         } catch (error) {
@@ -70,7 +70,7 @@ const AdminHeader = () => {
       const fetchTotalMessageCount = async () => {
         try {
           if(user && user.userId){
-            const response = await axios.get(`http://127.0.0.1:8000/api/chat/total-message-count/${user.userId}/`);
+            const response = await axios.get(`chat/total-message-count/${user.userId}/`);
             setTotalMessageCount(response.data[0].total_message_count);
             console.log('count:',response.data[0].total_message_count)
           }

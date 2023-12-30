@@ -32,7 +32,7 @@ const UpdateTimeSlotModal = ({ open, handleClose, timeSlot }) => {
 
       };
 
-      await axios.put(`http://127.0.0.1:8000/api/providerdashboard/time-slots/${timeSlot.id}`, updatedTimeSlot);
+      await axios.put(`providerdashboard/time-slots/${timeSlot.id}`, updatedTimeSlot);
       handleClose(); // Close the modal after updating
     } catch (error) {
       console.error('Error updating time slot:', error);

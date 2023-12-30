@@ -59,7 +59,7 @@ const CareHomeSingleView = () => {
       try {
         // Check if careHome is available
         if (careHome) {
-          const response = await axios.post('http://127.0.0.1:8000/api/chat/rooms/', {
+          const response = await axios.post('chat/rooms/', {
             care_home_id: careHomeId,
             user_id: UserId,
             provider_id: careHome.provider,
@@ -83,7 +83,7 @@ const CareHomeSingleView = () => {
     const fetchCareHomes = async () => {
       try {
         const response = await axios.get(
-          `http://127.0.0.1:8000/api/usersdashboard/carehomesingleview/${careHomeId}`
+          `usersdashboard/carehomesingleview/${careHomeId}`
         );
         setCareHomes(response.data);
         console.log('setCareHomes:',response.data)

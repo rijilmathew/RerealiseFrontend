@@ -12,7 +12,7 @@ const ProfessionalsReviewManagement = () => {
 
 
   const fetchReviews = ()=>{
-    axios.get('http://127.0.0.1:8000/api/providerdashboard/persons-review/')
+    axios.get('providerdashboard/persons-review/')
       .then(response => {
         setReview(response.data);
       })
@@ -72,7 +72,7 @@ const ProfessionalsReviewManagement = () => {
   };
 
   const handleReviewBlockAction = (reviewId) => {
-    axios.put(`http://127.0.0.1:8000/api/providerdashboard/professionalsreview-block/${reviewId}/`)
+    axios.put(`providerdashboard/professionalsreview-block/${reviewId}/`)
       .then(response => {
         fetchReviews()
       })
@@ -82,7 +82,7 @@ const ProfessionalsReviewManagement = () => {
   };
 
   const handleReviewUnblockAction = (reviewId) => {
-    axios.put(`http://127.0.0.1:8000/api/providerdashboard/professionalsreview-unblock/${reviewId}/`)
+    axios.put(`providerdashboard/professionalsreview-unblock/${reviewId}/`)
       .then(response => {
         fetchReviews()
       })

@@ -11,7 +11,7 @@ const ProvidersList = () => {
   console.log(users)
 
   useEffect(()=>{
-    axios.get('http://127.0.0.1:8000/api/admindashboard/provider-list/')
+    axios.get('admindashboard/provider-list/')
     .then(response =>{
         setUsers(response.data);
     })
@@ -37,7 +37,7 @@ const ProvidersList = () => {
   );
   
   const handleUserBlock = (userId) => {
-    axios.put(`http://127.0.0.1:8000/api/admindashboard/user-block/${userId}/`)
+    axios.put(`admindashboard/user-block/${userId}/`)
       .then(response => {
         // Assuming the response indicates the user was successfully blocked
         // You may want to update the UI accordingly, here we're updating the state
@@ -55,7 +55,7 @@ const ProvidersList = () => {
   }
 
   const handleUserUnblock = (userId) => {
-    axios.put(`http://127.0.0.1:8000/api/admindashboard/user-unblock/${userId}/`)
+    axios.put(`admindashboard/user-unblock/${userId}/`)
       .then(response => {
         // Assuming the response indicates the user was successfully blocked
         // You may want to update the UI accordingly, here we're updating the state

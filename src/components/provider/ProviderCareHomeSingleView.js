@@ -16,7 +16,7 @@ import {
   Button,
 } from "@mui/material";
 
-import { Link,  useNavigate,  useParams } from "react-router-dom";
+import {   useNavigate,  useParams } from "react-router-dom";
 import ChatIcon from "@mui/icons-material/Chat";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import RoomIcon from "@mui/icons-material/Room";
@@ -29,7 +29,9 @@ import { toast } from "react-toastify";
 import ConfirmBox from "./ProviderConfirmBox";
 import ProviderCarehomeReview from "./ProviderCarehomeReview";
 
-mapboxgl.accessToken = "pk.eyJ1IjoicmlqaWxtYXRoZXciLCJhIjoiY2xwN3l3anZ1MDFhdzJpbmhnc2Nkb2Z1byJ9.piSBAE09wbjiI9ikVACURw";
+const mapboxglaccessToken  = process.env.REACT_APP_MAPBOXGL_ACCESSSTOKEN
+
+mapboxgl.accessToken = mapboxglaccessToken
 
 
 const ProviderCareHomeSingleView = () => {
@@ -53,7 +55,7 @@ const ProviderCareHomeSingleView = () => {
   const fetchCareHomes = async () => {
     try {
       const response = await axios.get(
-        `http://127.0.0.1:8000/api/usersdashboard/carehomesingleview/${careHomeId}`
+        `usersdashboard/carehomesingleview/${careHomeId}`
       );
       setCareHomes(response.data);
       console.log('setCareHomes:',response.data)
@@ -98,7 +100,7 @@ const ProviderCareHomeSingleView = () => {
 
   const handleDelete = async (careHomeId) => {
     try {
-        await axios.delete(`http://127.0.0.1:8000/api/providerdashboard/carehomes/${deleteData?.id}`);
+        await axios.delete(`providerdashboard/carehomes/${deleteData?.id}`);
         // Filter out the deleted care home from the careHomes state
          toast.success('deleted ')
          setOpen(false);

@@ -13,7 +13,7 @@ const ProviderChatRooms = () => {
   useEffect(() => {
     const fetchRooms = async () => {
       try {
-        const response = await axios.get(`http://127.0.0.1:8000/api/chat/provider-chat-rooms/${providerId}/`);
+        const response = await axios.get(`chat/provider-chat-rooms/${providerId}/`);
         setRooms(response.data);
       } catch (error) {
         console.error('Error fetching rooms:', error);

@@ -17,7 +17,7 @@ const ProviderCareHomeList = () => {
     useEffect(() => {
         const fetchCareHomes = async () => {
         try {
-            const response = await axios.get(`http://127.0.0.1:8000/api/providerdashboard/provider-carehomes/${providerId}`);
+            const response = await axios.get(`providerdashboard/provider-carehomes/${providerId}`);
             setCareHomes(response.data);
             
         } catch (error) {

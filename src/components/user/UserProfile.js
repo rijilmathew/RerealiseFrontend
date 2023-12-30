@@ -27,7 +27,7 @@ const UserProfile = () => {
 
   const getuserprofile = (user_id) => {
     axios
-      .get(`http://127.0.0.1:8000/api/authentification/user-profile/${user_id}`)
+      .get(`authentification/user-profile/${user_id}`)
       .then((response) => {
         setUserProfile(response.data);
         console.log("userprofile:", response.data);
@@ -61,7 +61,7 @@ const UserProfile = () => {
       // If it's a new profile, perform a POST request
       axios
         .post(
-          `http://127.0.0.1:8000/api/authentification/user-profile/`,
+          `authentification/user-profile/`,
           formData
         )
         .then((response) => {
@@ -77,7 +77,7 @@ const UserProfile = () => {
       // If the profile exists, perform a PUT request for update
       axios
         .put(
-          `http://127.0.0.1:8000/api/authentification/user-profile/${user_id}/`,
+          `authentification/user-profile/${user_id}/`,
           formData,
           {
             headers: {

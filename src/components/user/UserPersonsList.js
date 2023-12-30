@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { CardContent, Typography, Grid, Stack, Container, Box, Button, Pagination, } from '@mui/material';
+import { CardContent, Typography, Grid, Stack,Box, Button, Pagination, } from '@mui/material';
 import {CardRoot,Media} from './userPageStyles/CareHomeStyled';
 import { Link, useNavigate } from 'react-router-dom';
 import { Search,SearchIconWrapper,StyledInputBase } from './userPageStyles/CareHomeStyled';
@@ -11,7 +11,7 @@ const UserPersonsList = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const [totalNumberOfPages, setTotalNumberOfPages] = useState(1);
-  const userr= localStorage.getItem('access_token')
+
 
 
   const navigate = useNavigate()
@@ -19,7 +19,7 @@ const UserPersonsList = () => {
   useEffect(() => {
     const fetchPersons = async () => {
       try {
-        const response = await axios.get(`http://127.0.0.1:8000/api/usersdashboard/userpersonslist/?page=${currentPage}`);
+        const response = await axios.get(`usersdashboard/userpersonslist/?page=${currentPage}`);
         setPersonsLists(response.data.results);
         setTotalNumberOfPages(Math.ceil(response.data.count / 2));
       } catch (error) {

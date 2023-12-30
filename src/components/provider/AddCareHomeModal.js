@@ -42,7 +42,7 @@ const AddCareHomeModal = ({open,handleClose}) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         // Post request to the backend to create a new CareHome
-        axios.post('http://127.0.0.1:8000/api/providerdashboard/carehomes/', careHomeData, {
+        axios.post('providerdashboard/carehomes/', careHomeData, {
             headers: {
               'Content-Type': 'multipart/form-data',
             },

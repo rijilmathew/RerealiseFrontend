@@ -10,7 +10,7 @@ const AdminHomePage = () => {
 
   const fetchUserCount= async ()=>{
     try{
-      const response = await axios.get('http://127.0.0.1:8000/api/admindashboard/user-provider-count/');
+      const response = await axios.get('admindashboard/user-provider-count/');
       const data = response.data;
       console.log('homepage:',data)
       setUserCount(data)
@@ -23,7 +23,7 @@ const AdminHomePage = () => {
 
   const fetchServiceCount= async ()=>{
     try{
-      const response = await axios.get('http://127.0.0.1:8000/api/admindashboard/services-count/');
+      const response = await axios.get('admindashboard/services-count/');
       const data = response.data;
       console.log('homepagecount:',data)
       setServicesCount(data)

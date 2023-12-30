@@ -12,7 +12,7 @@ const CarehomeReviewManagement = () => {
 
 
   const fetchReviews = ()=>{
-    axios.get('http://127.0.0.1:8000/api/providerdashboard/carehome-review/')
+    axios.get('providerdashboard/carehome-review/')
       .then(response => {
         setReview(response.data);
       })
@@ -72,7 +72,7 @@ const CarehomeReviewManagement = () => {
   };
 
   const handleReviewBlockAction = (reviewId) => {
-    axios.put(`http://127.0.0.1:8000/api/providerdashboard/carehomereview-block/${reviewId}/`)
+    axios.put(`providerdashboard/carehomereview-block/${reviewId}/`)
       .then(response => {
         fetchReviews()
       })
@@ -82,7 +82,7 @@ const CarehomeReviewManagement = () => {
   };
 
   const handleReviewUnblockAction = (reviewId) => {
-    axios.put(`http://127.0.0.1:8000/api/providerdashboard/carehomereview-unblock/${reviewId}/`)
+    axios.put(`providerdashboard/carehomereview-unblock/${reviewId}/`)
       .then(response => {
         fetchReviews()
       })

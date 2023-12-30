@@ -31,7 +31,7 @@ const AddTimeSlotComponent = ({ onAddTimeSlot ,open, handleClose,professional_id
     try {
       if (selectedDate&&professional_id) {
 
-        const response = await axios.get(`http://127.0.0.1:8000/api/providerdashboard/time-slots/${selectedDate}/${professional_id}`);
+        const response = await axios.get(`providerdashboard/time-slots/${selectedDate}/${professional_id}`);
         setExistingTimeSlots(response.data);
          console.log('dated time',response.data)
          if (response.data && response.data.length ===0) {toast.error(' Add Your Time  ')}
@@ -73,7 +73,7 @@ const AddTimeSlotComponent = ({ onAddTimeSlot ,open, handleClose,professional_id
   const handleDeleteTimeSlot= async (timeslot_id)=>{
     console.log('delet id ',timeslot_id)
     try{
-         await axios.delete(`http://127.0.0.1:8000/api/providerdashboard/time-slots/${timeslot_id}`);
+         await axios.delete(`providerdashboard/time-slots/${timeslot_id}`);
          setExistingTimeSlots(existingTimeSlots.filter(timeSlot => timeSlot.id !== timeslot_id ));
          toast.success('Deleted Successfully')
          

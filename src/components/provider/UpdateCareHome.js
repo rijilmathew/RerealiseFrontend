@@ -5,8 +5,8 @@ import axios from 'axios'
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import Swal from 'sweetalert2';
-
-mapboxgl.accessToken = 'pk.eyJ1IjoicmlqaWxtYXRoZXciLCJhIjoiY2xwN3l3anZ1MDFhdzJpbmhnc2Nkb2Z1byJ9.piSBAE09wbjiI9ikVACURw';
+const mapboxglaccessToken  = process.env.REACT_APP_MAPBOXGL_ACCESSSTOKEN
+mapboxgl.accessToken = mapboxglaccessToken
 const UpdateCareHome = ({open,handleClose,careHomes,onUpdateSuccess }) => {
     console.log(careHomes)
     const user = useSelector((state) => state.user.user);
@@ -72,7 +72,7 @@ const UpdateCareHome = ({open,handleClose,careHomes,onUpdateSuccess }) => {
         e.preventDefault();
         
        // Post request to the backend to create a new CareHome
-        axios.put(`http://127.0.0.1:8000/api/providerdashboard/carehomes/${careHomes.id}`, careHomeData, {
+        axios.put(`providerdashboard/carehomes/${careHomes.id}`, careHomeData, {
             headers: {
               'Content-Type': 'multipart/form-data',
             },

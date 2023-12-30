@@ -23,7 +23,7 @@ function UserReview(careHomeid){
         setReviewModalOpen(false);
     }
     const fetchReviews = (careHomeId)=>{
-         axios.get(`http://127.0.0.1:8000/api/providerdashboard/carehome-review/${careHomeId}/`)
+         axios.get(`providerdashboard/carehome-review/${careHomeId}/`)
            .then(response=>{
               setReviews(response.data);
               console.log('reviewrate:',response.data)

@@ -20,7 +20,7 @@ const UserReviewModal = ({open,handleClose,careHomeId,fetchReviews}) => {
 
       const handleSubmit = async () => {
         try {
-          const response = await axios.post('http://127.0.0.1:8000/api/providerdashboard/carehome-review/', {
+          const response = await axios.post('providerdashboard/carehome-review/', {
             user: UserId,
             CareHome: careHomeId,
             rating: rating,

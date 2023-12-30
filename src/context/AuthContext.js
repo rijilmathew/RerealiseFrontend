@@ -21,7 +21,7 @@ export const AuthProvider = ({ children }) => {
   const registerUser = async (formData) => {
     try {
       const response = await axios.post(
-        `${apiUrl}/api/authentification/user_registration/`,
+        `authentification/user_registration/`,
         formData
       );
       console.log("User Registion success", response.data);
@@ -46,7 +46,7 @@ export const AuthProvider = ({ children }) => {
   const loginUser = async (formData) => {
     try {
       const response = await axios.post(
-        `${apiUrl}/api/token/`,
+        `token/`,
         formData,
         {
           headers: {

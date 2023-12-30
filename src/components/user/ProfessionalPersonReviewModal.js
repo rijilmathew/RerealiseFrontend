@@ -20,7 +20,7 @@ const ProfessionalPersonReviewModal = ({open,handleClose,ProfessionalPersonId,fe
 
       const handleSubmit = async () => {
         try {
-          const response = await axios.post('http://127.0.0.1:8000/api/providerdashboard/persons-review/', {
+          const response = await axios.post('providerdashboard/persons-review/', {
             user: UserId,
             ProfessionalPerson: ProfessionalPersonId,
             rating: rating,

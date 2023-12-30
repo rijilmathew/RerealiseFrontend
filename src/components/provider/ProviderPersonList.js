@@ -15,7 +15,7 @@ const ProviderPersonList = () => {
     useEffect(() => {
         const fetchProviderList = async () => {
         try {
-            const response = await axios.get(`http://127.0.0.1:8000/api/providerdashboard/provider-persons/${providerId}`);
+            const response = await axios.get(`providerdashboard/provider-persons/${providerId}`);
             setPersonLists(response.data);
         } catch (error) {
             console.error('Error fetching care homes:', error);

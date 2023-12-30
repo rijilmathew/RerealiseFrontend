@@ -17,7 +17,7 @@ const ServiceCountChart = () => {
     useEffect(() => {
       const fetchData = async () => {
         try {
-          const response = await axios.get('http://127.0.0.1:8000/api/admindashboard/services-count/');
+          const response = await axios.get('admindashboard/services-count/');
           const data = response.data;
           console.log('Data',data)
   

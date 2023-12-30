@@ -39,7 +39,7 @@ const ProviderPersonSingleView = () => {
       };
     const fetchProviderList = async () => {
         try {
-            const response = await axios.get(`http://127.0.0.1:8000/api/providerdashboard/persons/${personId}`);
+            const response = await axios.get(`providerdashboard/persons/${personId}`);
             setPerson(response.data);
             console.log('setPerson:',response.data)
         } catch (error) {
@@ -53,7 +53,7 @@ const ProviderPersonSingleView = () => {
 
     const handleDelete = async (personId) => {
         try {
-            await axios.delete(`http://127.0.0.1:8000/api/providerdashboard/persons/${personId}`);
+            await axios.delete(`providerdashboard/persons/${personId}`);
             // Filter out the deleted care home from the careHomes state
             setPersonLists(personLists.filter(personList => personList.id !== personId ));
             Swal.fire({
@@ -73,7 +73,7 @@ const ProviderPersonSingleView = () => {
     const onAddTimeSlot = async (personId,newTimeSlot) => {
         try {
           const timeSlotData = { professional: personId, ...newTimeSlot };
-          const response = await axios.post('http://127.0.0.1:8000/api/providerdashboard/addtimeslot/', timeSlotData);
+          const response = await axios.post('providerdashboard/addtimeslot/', timeSlotData);
           console.log('Time slot added successfully:', response.data);
           toast.success('Time slot added successfully')
           

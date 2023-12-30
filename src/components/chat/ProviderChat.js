@@ -21,7 +21,7 @@ const ProviderChat = ({ room_name, userId }) => {
   useEffect(() => {
     if (room_name) {
       // Fetch last 50 messages using Axios
-      axios.get(`http://127.0.0.1:8000/api/chat/last-50-messages/${room_name}/`)
+      axios.get(`chat/last-50-messages/${room_name}/`)
         .then(response => {
           setMessages(response.data);
           console.log(response.data)

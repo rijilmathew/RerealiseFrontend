@@ -29,7 +29,7 @@ const ChatApp = () => {
   useEffect(() => {
     // Fetch rooms
     axios
-      .get(`http://127.0.0.1:8000/api/chat/provider-chat-rooms/${providerId}/`)
+      .get(`chat/provider-chat-rooms/${providerId}/`)
       .then((response) => {
         setRooms(response.data);
       })
@@ -41,7 +41,7 @@ const ChatApp = () => {
   const fetchMessages = (roomName) => {
     // Fetch messages for the selected room
     axios
-      .get(`http://127.0.0.1:8000/api/chat/last-50-messages/${roomName}/`)
+      .get(`chat/last-50-messages/${roomName}/`)
       .then((response) => {
         setMessages(response.data);
         console.log('50 msg:',response.data)
@@ -78,7 +78,7 @@ const ChatApp = () => {
       setSelectedRoom(roomName);
       fetchMessages(roomName);
        // Mark messages as seen
-       await axios.patch(`http://127.0.0.1:8000/api/chat/mark-messages-as-seen/${roomId}/`);
+       await axios.patch(`chat/mark-messages-as-seen/${roomId}/`);
        fetchUnseenMessageCounts();
        
        
@@ -102,7 +102,7 @@ const ChatApp = () => {
     const counts = {};
     for (const room of rooms) {
       try {
-        const response = await axios.get(`http://127.0.0.1:8000/api/chat/unseen-messages-count/${room.id}/`);
+        const response = await axios.get(`chat/unseen-messages-count/${room.id}/`);
         counts[room.id] = response.data.unseen_count;
       } catch (error) {
         console.error(`Error fetching unseen count for room ${room.id}:`, error);

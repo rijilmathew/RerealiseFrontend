@@ -7,7 +7,7 @@ export const PersonApprove = () => {
 
         const fetchData= async()=>{
             try{
-                const response=await axios.get('http://127.0.0.1:8000/api/admindashboard/personlist/');
+                const response=await axios.get('admindashboard/personlist/');
                 setPersonList(response.data);
             } catch (error){
                 console.error('Error fetching data:', error);
@@ -21,7 +21,7 @@ export const PersonApprove = () => {
 
         const handleApprove = async (personId)=>{
             try{
-                await axios.patch(`http://127.0.0.1:8000/api/admindashboard/personlist/${personId}/`,{
+                await axios.patch(`admindashboard/personlist/${personId}/`,{
                     is_active: true
 
                 }).then(response =>{

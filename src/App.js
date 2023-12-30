@@ -36,7 +36,7 @@ import ProviderBookingListPage from "./pages/providerPages/ProviderBookingListPa
 import ProfessionalsReviewManagementPage from "./pages/adminPages/ProfessionalsReviewManagementPage";
 import CarehomeReviewManagementPage from "./pages/adminPages/CarehomeReviewManagementPage";
 import axios from "axios";
-axios.defaults.baseURL= 'https://backend.rerealise.online/'
+axios.defaults.baseURL= 'https://backend.rerealise.online/api/'
 // Create your MUI theme
 const theme = createTheme({
   // Define your theme configurations here

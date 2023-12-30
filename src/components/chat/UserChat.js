@@ -21,7 +21,7 @@ const UserChat = ({ room_name, userId, isOpen, onClose }) => {
   const [messages, setMessages] = useState([]);
   const [messageInput, setMessageInput] = useState("");
   const { lastMessage, sendMessage } = useWebSocket(
-    room_name ? `ws://rijilmathew.co/ws/chat/${room_name}/?userId=${userId}` : null
+    room_name ? `wss://rijilmathew.co/ws/chat/${room_name}/?userId=${userId}` : null
   );
 
   useEffect(() => {

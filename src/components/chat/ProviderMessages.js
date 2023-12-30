@@ -23,7 +23,7 @@ const ChatApp = () => {
   const [messages, setMessages] = useState([]);
   const [messageInput, setMessageInput] = useState("");
   const { lastMessage, sendMessage } = useWebSocket(
-    selectedRoom ? `ws://127.0.0.1:8000/ws/chat/${selectedRoom}/?userId=${providerId}` : null
+    selectedRoom ? `ws://https://rijilmathew.co/ws/chat/${selectedRoom}/?userId=${providerId}` : null
   );
 
   useEffect(() => {

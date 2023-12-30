@@ -6,8 +6,8 @@ import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import Swal from 'sweetalert2';
 
-const mapboxglaccessToken  = process.env.REACT_APP_MAPBOXGL_ACCESSSTOKEN
-mapboxgl.accessToken = mapboxglaccessToken
+// const mapboxglaccessToken  = process.env.REACT_APP_MAPBOXGL_ACCESSSTOKEN
+mapboxgl.accessToken ='pk.eyJ1IjoicmlqaWxtYXRoZXciLCJhIjoiY2xwN3l3anZ1MDFhdzJpbmhnc2Nkb2Z1byJ9.piSBAE09wbjiI9ikVACURw'
 
 const AddCareHomeModal = ({open,handleClose}) => {
     const user = useSelector((state) => state.user.user);

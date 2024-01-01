@@ -33,7 +33,7 @@ const UserProfile = () => {
         console.log("userprofile:", response.data);
         // Set the profile image
         setProfileImageURL(
-          `http://127.0.0.1:8000${response.data.profile_photo}`
+          `https://backend.rerealise.online${response.data.profile_photo}`
         );
       })
       .catch((error) => {

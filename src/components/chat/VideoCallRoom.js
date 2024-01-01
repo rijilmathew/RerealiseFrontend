@@ -20,7 +20,7 @@ function VideoCallRoom() {
         container:element,
         sharedLinks:[{
             name:'Copy Link',
-            url: `http://localhost:3000/provider-videocall/${roomId}`
+            url: `https://www.rerealise.online/provider-videocall/${roomId}`
 
         }],
         scenario:{

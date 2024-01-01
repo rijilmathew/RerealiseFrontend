@@ -57,7 +57,7 @@ const ProviderHomePage = () => {
     <Box mt={8}>
         <Example/>
     <CustomHomeBox>
-        <Box sx={{ flex: 1, display:{ xs:'none',md:'flex'}, flexDirection: 'column', alignItems: 'center', backgroundColor: '#FFFFFF', width: '50%' }}>
+        <Box sx={{ flex: 1,  display: 'flex', flexDirection: 'column', alignItems: 'center', backgroundColor: '#FFFFFF', width: '50%' }}>
           <Box  mt={5}>
           <Typography
             variant="h2"
